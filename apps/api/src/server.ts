@@ -18,9 +18,18 @@ const openApiDocument = generateOpenApiDocument(serverRouter, {
   baseUrl: env.BASE_URL.concat("/api"),
 });
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://pratikriya-web.vercel.app",
+];
+
+if (env.CLIENT_URL) {
+  allowedOrigins.push(env.CLIENT_URL);
+}
+
 app.use(
   cors({
-    origin : "http://localhost:3000",
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
