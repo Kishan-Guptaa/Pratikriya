@@ -100,8 +100,8 @@ export function SiteHeader() {
               href={item.url}
               className={cn(
                 "text-xs font-bold px-3 py-1.5 rounded-xl border border-transparent transition-all whitespace-nowrap",
-                isActive 
-                  ? "bg-pastel-yellow border-[#2d2638] border-2 text-[#2d2638] shadow-[2px_2px_0px_#2d2638] -translate-y-0.5 -translate-x-0.5" 
+                isActive
+                  ? "bg-pastel-yellow border-[#2d2638] border-2 text-[#2d2638] shadow-[2px_2px_0px_#2d2638] -translate-y-0.5 -translate-x-0.5"
                   : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-zinc-800"
               )}
             >

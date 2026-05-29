@@ -114,10 +114,10 @@ export function Footer({ className }: FooterProps) {
         }
       `}} />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-start mb-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-4 items-start mb-8">
 
         {/* Left Column: Brand & Newsletter */}
-        <div className="lg:col-span-4 space-y-4">
+        <div className="md:col-span-1 lg:col-span-4 space-y-4 md:order-1">
           <div className="flex items-center gap-2">
             <div className="size-8 rounded-full bg-primary flex items-center justify-center text-white font-bold font-caveat text-lg border-2 border-foreground shadow-[1.5px_1.5px_0px_#000]">
               P
@@ -199,7 +199,7 @@ export function Footer({ className }: FooterProps) {
         </div>
 
         {/* Center/Middle Column: Connecting UI Integrations Hub */}
-        <div className="lg:col-span-4 flex flex-col items-center justify-center relative min-h-[220px]">
+        <div className="md:col-span-2 lg:col-span-4 flex flex-col items-center justify-center relative min-h-[220px] md:order-3 lg:order-2">
           <h3 className="text-base font-bold font-caveat mb-2 md:mb-0 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2">
             Form Structure Hub
           </h3>
@@ -375,7 +375,7 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           {/* Mobile Fallback View */}
-          <div className="md:hidden grid grid-cols-5 gap-1.5 w-full pt-2">
+          <div className="md:hidden grid grid-cols-3 sm:grid-cols-5 gap-2 w-full pt-2">
             {FORM_FIELDS.map((item) => {
               const IconComponent = item.icon;
               const isRequired = fields[item.id];
@@ -453,7 +453,7 @@ export function Footer({ className }: FooterProps) {
         </div>
 
         {/* Right Column: Site Navigation links & Developer Portfolio Card */}
-        <div className="lg:col-span-4 flex flex-col gap-4 lg:pl-4">
+        <div className="md:col-span-1 lg:col-span-4 flex flex-col gap-4 lg:pl-4 md:order-2 lg:order-3">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <h4 className="font-caveat text-lg font-bold border-b border-foreground/10 pb-0.5">Product</h4>

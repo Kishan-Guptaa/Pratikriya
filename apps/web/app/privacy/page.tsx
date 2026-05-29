@@ -4,15 +4,15 @@ import Link from "next/link";
 import { useState, useMemo } from "react";
 import { useUser } from "~/hooks/api/auth";
 import { Button } from "~/components/ui/button";
-import { 
-  ArrowLeft, 
-  ArrowRight, 
-  Search, 
-  Shield, 
-  Mail, 
-  Cookie, 
-  Database, 
-  UserCheck, 
+import {
+  ArrowLeft,
+  ArrowRight,
+  Search,
+  Shield,
+  Mail,
+  Cookie,
+  Database,
+  UserCheck,
   HelpCircle,
   AlertTriangle,
   Lock
@@ -63,7 +63,7 @@ export default function PrivacyPolicyPage() {
       content: (
         <div className="space-y-4 font-patrick-hand text-base">
           <p>We collect several types of information to provide you with a smooth and secure form-building experience:</p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
             <div className="border-2 border-foreground p-3.5 rounded-xl bg-white shadow-[2px_2px_0px_#000]">
               <h5 className="font-bold font-caveat text-lg text-primary mb-1">Account Details</h5>
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
                 <li>Encrypted passwords (hashed using bcrypt)</li>
               </ul>
             </div>
-            
+
             <div className="border-2 border-foreground p-3.5 rounded-xl bg-white shadow-[2px_2px_0px_#000]">
               <h5 className="font-bold font-caveat text-lg text-secondary mb-1">Auth & OAuth Data</h5>
               <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
@@ -376,8 +376,8 @@ export default function PrivacyPolicyPage() {
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-xs font-bold text-muted-foreground hover:text-foreground font-patrick-hand flex items-center gap-1 hover:underline transition-colors"
           >
             <ArrowLeft className="size-3.5" /> Back to Home
@@ -401,7 +401,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Main content */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-10">
-        
+
         {/* Page Hero */}
         <div className="text-center space-y-3 mb-10">
           <div className="inline-flex size-14 items-center justify-center rounded-full bg-pastel-pink border-3 border-foreground shadow-[3px_3px_0px_#000] mb-2 rotate-[-6deg]">
@@ -432,7 +432,7 @@ export default function PrivacyPolicyPage() {
 
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-8 items-start">
-          
+
           {/* Index Sidebar - Sticky on desktop, hidden on mobile queries */}
           <aside className="hidden lg:block sticky top-24 bg-white border-3 border-foreground rounded-2xl p-4 shadow-[4px_4px_0px_#000] space-y-3 shrink-0">
             <h4 className="font-caveat text-lg font-bold border-b-2 border-foreground/10 pb-1 text-slate-700">
@@ -446,11 +446,10 @@ export default function PrivacyPolicyPage() {
                     setActiveSection(sec.id);
                     document.getElementById(sec.id)?.scrollIntoView({ behavior: "smooth", block: "center" });
                   }}
-                  className={`text-left text-xs font-patrick-hand font-bold px-2.5 py-1.5 rounded-lg border transition-all truncate ${
-                    activeSection === sec.id
+                  className={`text-left text-xs font-patrick-hand font-bold px-2.5 py-1.5 rounded-lg border transition-all truncate ${activeSection === sec.id
                       ? "bg-pastel-yellow border-foreground border-2 shadow-[1.5px_1.5px_0px_#000] text-foreground"
                       : "border-transparent text-slate-500 hover:bg-slate-50 hover:text-slate-800"
-                  }`}
+                    }`}
                 >
                   {sec.title}
                 </button>
@@ -480,7 +479,7 @@ export default function PrivacyPolicyPage() {
                 <h3 className="font-caveat text-2xl font-bold text-slate-800 mb-4 border-b border-dashed border-foreground/20 pb-2 pr-24">
                   {sec.title}
                 </h3>
-                
+
                 <div className="text-slate-700">
                   {sec.content}
                 </div>
@@ -489,18 +488,18 @@ export default function PrivacyPolicyPage() {
 
             {filteredSections.length === 0 && (
               <div className="bg-white border-3 border-foreground rounded-3xl p-10 text-center shadow-[6px_6px_0px_#000] space-y-4">
-                <img 
-                  src="https://api.dicebear.com/7.x/open-peeps/svg?seed=oops" 
-                  alt="No results avatar" 
-                  className="size-36 mx-auto animate-bounce opacity-80" 
+                <img
+                  src="https://api.dicebear.com/7.x/open-peeps/svg?seed=oops"
+                  alt="No results avatar"
+                  className="size-36 mx-auto animate-bounce opacity-80"
                 />
                 <h4 className="font-caveat text-2xl font-bold text-slate-800">No Privacy Sections Found</h4>
                 <p className="text-sm font-patrick-hand text-muted-foreground max-w-sm mx-auto">
                   We couldn't find any policy matches for "{searchQuery}". Try searching for terms like "cookies", "delete", or "sharing".
                 </p>
-                <Button 
-                  onClick={() => setSearchQuery("")} 
-                  variant="outline" 
+                <Button
+                  onClick={() => setSearchQuery("")}
+                  variant="outline"
                   className="border-2 border-foreground font-bold h-9 text-xs"
                 >
                   Clear Search

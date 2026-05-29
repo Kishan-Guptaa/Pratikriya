@@ -97,14 +97,14 @@ const renderSubmissionValue = (v: any, matchedForm: any) => {
 
   if (fieldType === "IMAGE") {
     return (
-      <div 
-        className="mt-1 size-14 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 relative group cursor-pointer" 
+      <div
+        className="mt-1 size-14 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 relative group cursor-pointer"
         onClick={() => window.open(v.value, '_blank')}
       >
-        <img 
-          src={v.value} 
-          alt="Submitted Image" 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+        <img
+          src={v.value}
+          alt="Submitted Image"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
         />
       </div>
     );
@@ -115,16 +115,16 @@ const renderSubmissionValue = (v: any, matchedForm: any) => {
     return (
       <div className="flex flex-wrap gap-1 mt-1">
         {images.map((imgUrl: string, idx: number) => (
-          <div 
-            key={idx} 
-            className="size-10 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 relative group cursor-pointer" 
+          <div
+            key={idx}
+            className="size-10 rounded-lg overflow-hidden border border-slate-200 bg-slate-50 relative group cursor-pointer"
             onClick={() => window.open(imgUrl, '_blank')}
             title={`View Image ${idx + 1}`}
           >
-            <img 
-              src={imgUrl} 
-              alt={`Submitted Image ${idx + 1}`} 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+            <img
+              src={imgUrl}
+              alt={`Submitted Image ${idx + 1}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform"
             />
           </div>
         ))}
@@ -134,7 +134,7 @@ const renderSubmissionValue = (v: any, matchedForm: any) => {
 
   if (fieldType === "SIGNATURE") {
     return (
-      <div 
+      <div
         className="mt-1 size-14 border border-slate-200 rounded-lg p-1 bg-white flex items-center justify-center cursor-pointer shrink-0"
         onClick={() => window.open(v.value, '_blank')}
         title="View Signature"
@@ -182,9 +182,8 @@ const renderSubmissionValue = (v: any, matchedForm: any) => {
   if (fieldType === "TERMS") {
     const isAccepted = v.value === "Accepted";
     return (
-      <span className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded-full mt-1 ${
-        isAccepted ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-rose-50 text-rose-700 border border-rose-200'
-      }`}>
+      <span className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded-full mt-1 ${isAccepted ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-rose-50 text-rose-700 border border-rose-200'
+        }`}>
         {isAccepted ? 'Accepted Terms' : 'Declined'}
       </span>
     );
@@ -193,9 +192,8 @@ const renderSubmissionValue = (v: any, matchedForm: any) => {
   if (fieldType === "CHECKBOX") {
     const isChecked = v.value === "Checked";
     return (
-      <span className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded-full mt-1 ${
-        isChecked ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-slate-50 text-slate-500 border border-slate-200'
-      }`}>
+      <span className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded-full mt-1 ${isChecked ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-slate-50 text-slate-500 border border-slate-200'
+        }`}>
         {isChecked ? 'Checked' : 'Unchecked'}
       </span>
     );
@@ -360,7 +358,7 @@ function DashboardContent() {
   const chartPoints = useMemo(() => {
     const subs = selectedAnaFormId === "all" ? allSubmissions : specificFormSubs;
     if (subs.length === 0) return [];
-    
+
     const datesMap: Record<string, number> = {};
     const sortedSubs = [...subs].sort((a, b) => new Date(a.createdAt!).getTime() - new Date(b.createdAt!).getTime());
 
@@ -625,8 +623,8 @@ function DashboardContent() {
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="p-0 overflow-x-auto w-full">
-                  <Table className="w-full min-w-[650px]">
+                <CardContent className="p-0">
+                  <Table className="w-full">
                     <TableHeader className="bg-slate-50/50">
                       <TableRow className="border-b border-slate-100 hover:bg-transparent">
                         <TableHead className="font-bold text-slate-700 text-sm px-5 py-4 font-patrick-hand">Form Title</TableHead>
@@ -718,15 +716,15 @@ function DashboardContent() {
                             const formTitle = forms.find((f) => f.id === sub.formId)?.title ?? "Unknown Form";
                             const firstVal = sub.values?.[0]?.value ?? "Empty response";
                             return (
-                              <Link 
+                              <Link
                                 href={`/dashboard?tab=submissions&formId=${sub.formId}`}
-                                key={sub.id} 
+                                key={sub.id}
                                 className="block p-2.5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors"
                               >
                                 <div className="flex items-center justify-between gap-2">
                                   <span className="font-bold font-caveat tracking-wider text-slate-700 text-sm truncate max-w-[130px]">{formTitle}</span>
                                   <span className="text-[9px] text-slate-400 font-semibold">
-                                    {sub.createdAt ? new Date(sub.createdAt).toLocaleDateString(undefined, {month: 'short', day: 'numeric'}) : ""}
+                                    {sub.createdAt ? new Date(sub.createdAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) : ""}
                                   </span>
                                 </div>
                                 <p className="text-[11px] text-slate-500 font-semibold truncate mt-1">
@@ -767,10 +765,10 @@ function DashboardContent() {
                           <span className="text-xs font-bold text-slate-700">Create a form recipe</span>
                         </div>
                         {forms.length === 0 && (
-                          <Button 
+                          <Button
                             onClick={() => setCreateOpen(true)}
-                            size="xs" 
-                            variant="ghost" 
+                            size="xs"
+                            variant="ghost"
                             className="text-[#7b61ff] font-bold hover:bg-violet-50 text-[10px] h-7 px-2 rounded-lg"
                           >
                             Create
@@ -790,9 +788,9 @@ function DashboardContent() {
                         </div>
                         {forms.length > 0 && !forms.some(f => f.acceptsResponses) && (
                           <Link href="/dashboard?tab=my-forms">
-                            <Button 
-                              size="xs" 
-                              variant="ghost" 
+                            <Button
+                              size="xs"
+                              variant="ghost"
                               className="text-[#7b61ff] font-bold hover:bg-violet-50 text-[10px] h-7 px-2 rounded-lg"
                             >
                               Activate
@@ -825,9 +823,9 @@ function DashboardContent() {
                         </div>
                         {allSubmissions.length > 0 && (
                           <Link href="/dashboard?tab=analytics">
-                            <Button 
-                              size="xs" 
-                              variant="ghost" 
+                            <Button
+                              size="xs"
+                              variant="ghost"
                               className="text-[#7b61ff] font-bold hover:bg-violet-50 text-[10px] h-7 px-2 rounded-lg"
                             >
                               View
@@ -908,8 +906,8 @@ function DashboardContent() {
               </div>
 
               {/* Playground Forms Grid */}
-              <div className="mt-6 rounded-2xl border border-slate-100 overflow-hidden overflow-x-auto w-full bg-white/40">
-                <Table className="w-full min-w-[850px]">
+              <div className="mt-6 rounded-2xl border border-slate-100 overflow-hidden">
+                <Table className="w-full bg-white/40">
                   <TableHeader className="bg-slate-50/50">
                     <TableRow className="border-b border-slate-100">
                       <TableHead className="font-bold text-slate-700 text-xs px-5 py-4">Title & Details</TableHead>
@@ -1014,46 +1012,46 @@ function DashboardContent() {
                                   </Link>
                                 </Button>
                                 <Dialog>
-                                   <DialogTrigger asChild>
-                                     <Button
-                                       size="xs"
-                                       variant="outline"
-                                       className="border-red-200 text-red-500 hover:bg-red-50 hover:text-red-600 rounded-xl text-[10px] font-bold"
-                                     >
-                                       Delete
-                                     </Button>
-                                   </DialogTrigger>
-                                   <DialogContent className="glass-panel border-none rounded-3xl p-6 sm:max-w-md">
-                                     <DialogHeader>
-                                       <DialogTitle className="text-xl font-bold font-caveat tracking-wider text-slate-800">
-                                         Confirm Deletion
-                                       </DialogTitle>
-                                       <DialogDescription className="text-slate-600 font-semibold text-xs mt-2 leading-relaxed">
-                                         Are you absolutely sure you want to delete the form <span className="font-bold text-slate-800">"{form.title}"</span> and all of its responses? This action cannot be undone.
-                                       </DialogDescription>
-                                     </DialogHeader>
-                                     <DialogFooter className="pt-4 gap-2 flex justify-end">
-                                       <DialogClose asChild>
-                                         <Button variant="outline" className="rounded-2xl h-10 px-5 border-slate-200 text-slate-600 font-bold hover:bg-slate-50 text-xs">
-                                           Cancel
-                                         </Button>
-                                       </DialogClose>
-                                       <Button
-                                         className="scribble-btn bg-pastel-pink hover:bg-pink-100 text-red-600 rounded-2xl h-10 px-5 font-bold text-xs"
-                                         onClick={async () => {
-                                           try {
-                                             await deleteFormAsync({ formId: form.id });
-                                             toast.success("Form deleted successfully!");
-                                           } catch (e) {
-                                             toast.error("Failed to delete form");
-                                           }
-                                         }}
-                                       >
-                                         Yes, Delete Form
-                                       </Button>
-                                     </DialogFooter>
-                                   </DialogContent>
-                                 </Dialog>
+                                  <DialogTrigger asChild>
+                                    <Button
+                                      size="xs"
+                                      variant="outline"
+                                      className="border-red-200 text-red-500 hover:bg-red-50 hover:text-red-600 rounded-xl text-[10px] font-bold"
+                                    >
+                                      Delete
+                                    </Button>
+                                  </DialogTrigger>
+                                  <DialogContent className="glass-panel border-none rounded-3xl p-6 sm:max-w-md">
+                                    <DialogHeader>
+                                      <DialogTitle className="text-xl font-bold font-caveat tracking-wider text-slate-800">
+                                        Confirm Deletion
+                                      </DialogTitle>
+                                      <DialogDescription className="text-slate-600 font-semibold text-xs mt-2 leading-relaxed">
+                                        Are you absolutely sure you want to delete the form <span className="font-bold text-slate-800">"{form.title}"</span> and all of its responses? This action cannot be undone.
+                                      </DialogDescription>
+                                    </DialogHeader>
+                                    <DialogFooter className="pt-4 gap-2 flex justify-end">
+                                      <DialogClose asChild>
+                                        <Button variant="outline" className="rounded-2xl h-10 px-5 border-slate-200 text-slate-600 font-bold hover:bg-slate-50 text-xs">
+                                          Cancel
+                                        </Button>
+                                      </DialogClose>
+                                      <Button
+                                        className="scribble-btn bg-pastel-pink hover:bg-pink-100 text-red-600 rounded-2xl h-10 px-5 font-bold text-xs"
+                                        onClick={async () => {
+                                          try {
+                                            await deleteFormAsync({ formId: form.id });
+                                            toast.success("Form deleted successfully!");
+                                          } catch (e) {
+                                            toast.error("Failed to delete form");
+                                          }
+                                        }}
+                                      >
+                                        Yes, Delete Form
+                                      </Button>
+                                    </DialogFooter>
+                                  </DialogContent>
+                                </Dialog>
                               </div>
                             </TableCell>
                           </TableRow>
@@ -1183,8 +1181,8 @@ function DashboardContent() {
                 {TEMPLATES_DATA.map((tpl) => {
                   const isLoading = templateLoading === tpl.title;
                   return (
-                    <div 
-                      key={tpl.id} 
+                    <div
+                      key={tpl.id}
                       className={`w-full bg-white dark:bg-black p-6 border-2 border-foreground shadow-[4px_4px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_#7b61ff] transition-all hover:-translate-y-2 cursor-default flex flex-col justify-between ${tpl.border}`}
                     >
                       <div>
@@ -1193,7 +1191,7 @@ function DashboardContent() {
                         </div>
                         <h3 className="text-2xl font-bold font-geist-sans text-foreground">{tpl.title}</h3>
                         <p className="text-xs text-slate-500 font-semibold leading-relaxed mt-2">{tpl.description}</p>
-                        
+
                         {/* Fields List details */}
                         <div className="mt-4 rounded-2xl bg-slate-50/70 p-3 border border-slate-100 text-[11px] font-semibold text-slate-600 space-y-1.5">
                           <p className="text-[9px] uppercase tracking-wider text-slate-400 font-bold mb-1">Fields included ({tpl.fields.length}):</p>
@@ -1332,7 +1330,7 @@ function DashboardContent() {
 
                     {filteredSubmissions.length > 4 && (
                       <div className="flex justify-center pt-4 pb-2">
-                        <Button 
+                        <Button
                           onClick={() => router.push(`/dashboard?tab=all-submissions&formId=${selectedSubFormId}`)}
                           className="scribble-btn bg-[#7b61ff] hover:bg-[#684ff0] text-white font-bold h-11 px-8 rounded-2xl border-none shadow-sm"
                         >
@@ -1361,7 +1359,7 @@ function DashboardContent() {
                     Showing all {filteredSubmissions.length} letters for your selected filter.
                   </CardDescription>
                 </div>
-                <Button 
+                <Button
                   onClick={() => router.push(`/dashboard?tab=submissions&formId=${selectedSubFormId}`)}
                   variant="outline"
                   className="scribble-btn bg-white hover:bg-slate-50 text-slate-700 font-bold h-11 px-6 rounded-2xl border-slate-200 shadow-sm"
@@ -1504,8 +1502,8 @@ function DashboardContent() {
                 <div className="h-48 w-full flex items-center justify-center pt-2">
                   {lineChartPoints.length === 0 ? (
                     <div className="w-full text-center text-xs text-slate-400 font-bold my-auto">
-                      {selectedAnaFormId === "all" 
-                        ? "No submissions recorded across any form yet." 
+                      {selectedAnaFormId === "all"
+                        ? "No submissions recorded across any form yet."
                         : "No submissions recorded for this form yet."}
                     </div>
                   ) : (

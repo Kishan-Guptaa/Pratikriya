@@ -644,8 +644,8 @@ export default function FormBuilderClient({ formId }: Props) {
                   <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
                     {(getFieldConfig(selectedField).options || (
                       selectedField.type === 'CHECKBOX' ? ['JavaScript', 'React', 'Node.js', 'MongoDB'] :
-                      selectedField.type === 'RADIO' ? ['Male', 'Female', 'Other'] :
-                      ['India', 'USA', 'Canada']
+                        selectedField.type === 'RADIO' ? ['Male', 'Female', 'Other'] :
+                          ['India', 'USA', 'Canada']
                     )).map((opt: string, idx: number, arr: string[]) => (
                       <div key={idx} className="flex items-center gap-1.5">
                         <Input
@@ -703,8 +703,8 @@ export default function FormBuilderClient({ formId }: Props) {
                     onClick={() => {
                       const arr = getFieldConfig(selectedField).options || (
                         selectedField.type === 'CHECKBOX' ? ['JavaScript', 'React', 'Node.js', 'MongoDB'] :
-                        selectedField.type === 'RADIO' ? ['Male', 'Female', 'Other'] :
-                        ['India', 'USA', 'Canada']
+                          selectedField.type === 'RADIO' ? ['Male', 'Female', 'Other'] :
+                            ['India', 'USA', 'Canada']
                       );
                       handleFieldPropertyChange(selectedField, 'options', [...arr, `New Option ${arr.length + 1}`]);
                     }}
@@ -1088,13 +1088,12 @@ function SortableFieldItem({
       ref={setNodeRef}
       style={style}
       onClick={onClick}
-      className={`relative rounded-xl border bg-card/60 p-4 transition-all duration-200 cursor-pointer select-none ${
-        isDragging
+      className={`relative rounded-xl border bg-card/60 p-4 transition-all duration-200 cursor-pointer select-none ${isDragging
           ? 'z-50 border-[#7b61ff] shadow-lg ring-2 ring-[#7b61ff]/20 scale-[1.01] bg-card'
           : isSelected
-          ? 'border-2 border-[#7b61ff] bg-white shadow-[3px_3px_0px_#7b61ff]'
-          : 'border-2 border-[#2d2638] shadow-[2px_2px_0px_#2d2638] bg-white hover:border-[#7b61ff]'
-      }`}
+            ? 'border-2 border-[#7b61ff] bg-white shadow-[3px_3px_0px_#7b61ff]'
+            : 'border-2 border-[#2d2638] shadow-[2px_2px_0px_#2d2638] bg-white hover:border-[#7b61ff]'
+        }`}
     >
       <div className="flex items-start gap-3">
         {/* Drag handle */}

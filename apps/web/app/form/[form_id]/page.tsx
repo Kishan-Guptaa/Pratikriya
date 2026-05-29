@@ -14,21 +14,21 @@ import { Select, SelectTrigger, SelectItem, SelectContent, SelectValue } from '~
 import { Badge } from '~/components/ui/badge';
 import { Checkbox } from '~/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '~/components/ui/radio-group';
-import { 
-  Loader2, 
-  AlertCircle, 
-  Check, 
-  User, 
-  Mail, 
-  RefreshCw, 
-  Send,
-  HelpCircle,
-  FileText,
-  Home,
-  LogOut,
-  Upload,
-  X,
-  Trash2
+import {
+	Loader2,
+	AlertCircle,
+	Check,
+	User,
+	Mail,
+	RefreshCw,
+	Send,
+	HelpCircle,
+	FileText,
+	Home,
+	LogOut,
+	Upload,
+	X,
+	Trash2
 } from 'lucide-react';
 
 const isFieldVisible = (field: any, allFields: any[], values: Record<string, string>): boolean => {
@@ -115,7 +115,7 @@ export default function Page() {
 					return {};
 				}
 			})();
-			
+
 			if (f.type === 'RATING' && config.defaultRating !== undefined && config.defaultRating !== null) {
 				initial[f.id] = String(config.defaultRating);
 			} else if (f.type === 'TEXT' && config.defaultValue !== undefined && config.defaultValue !== null) {
@@ -183,12 +183,12 @@ export default function Page() {
 		return (
 			<div className="min-h-screen bg-[#fbfaf5] flex items-center justify-center p-6 scribble-bg">
 				<div className="bg-white border-4 border-foreground rounded-3xl p-8 max-w-md w-full text-center space-y-4 shadow-[8px_8px_0px_#000] relative flex flex-col items-center">
-					<img 
-						src="https://api.dicebear.com/7.x/open-peeps/png?seed=Closed&size=144" 
-						alt="Closed avatar" 
-						className="size-36 mx-auto opacity-90 animate-bounce pointer-events-none mb-2" 
+					<img
+						src="https://api.dicebear.com/7.x/open-peeps/png?seed=Closed&size=144"
+						alt="Closed avatar"
+						className="size-36 mx-auto opacity-90 animate-bounce pointer-events-none mb-2"
 					/>
-					
+
 					<span className="text-[10px] font-bold px-3 py-0.5 bg-rose-100 text-rose-700 border-2 border-foreground rounded-full shadow-[1.5px_1.5px_0px_#000] uppercase tracking-wider">
 						Mailbox Closed
 					</span>
@@ -397,11 +397,11 @@ export default function Page() {
 			case 'TEXTAREA':
 				return (
 					<div className="flex flex-col gap-1 w-full">
-						<Textarea 
-							{...common} 
-							rows={config.rows ? Number(config.rows) : 4} 
+						<Textarea
+							{...common}
+							rows={config.rows ? Number(config.rows) : 4}
 							maxLength={config.charLimit ? Number(config.charLimit) : undefined}
-							className="w-full bg-white border-2 border-foreground rounded-xl p-4 text-xs font-bold shadow-[2px_2px_0px_#000] focus:shadow-none focus:translate-x-[1px] focus:translate-y-[1px] outline-none transition-all min-h-[100px] font-patrick-hand placeholder-slate-400" 
+							className="w-full bg-white border-2 border-foreground rounded-xl p-4 text-xs font-bold shadow-[2px_2px_0px_#000] focus:shadow-none focus:translate-x-[1px] focus:translate-y-[1px] outline-none transition-all min-h-[100px] font-patrick-hand placeholder-slate-400"
 						/>
 						{config.charLimit && (
 							<p className="text-[10px] font-bold text-slate-400 text-right font-patrick-hand mr-1">
@@ -518,11 +518,11 @@ export default function Page() {
 			}
 			case 'DATE':
 				return (
-					<Input 
-						type="date" 
-						min={config.minDate || undefined} 
-						max={config.maxDate || undefined} 
-						{...common} 
+					<Input
+						type="date"
+						min={config.minDate || undefined}
+						max={config.maxDate || undefined}
+						{...common}
 					/>
 				);
 			case 'RATING':
@@ -603,9 +603,9 @@ export default function Page() {
 
 	return (
 		<div className="min-h-screen bg-[#fbfaf5] flex flex-col items-center justify-center p-4 md:p-8 relative scribble-bg">
-			
+
 			<div className="w-full max-w-xl relative mt-16 mb-10">
-				
+
 				{/* Peek-a-boo Mascot illustration sticking from behind notepad */}
 				{!submitSuccess && (
 					<div className="absolute -top-[94px] right-6 size-24 pointer-events-none hidden sm:block">
@@ -616,34 +616,34 @@ export default function Page() {
 							aria-label="Form mascot"
 						>
 							{/* Body */}
-							<ellipse cx="60" cy="105" rx="28" ry="30" fill="#7b61ff" stroke="#2d2638" strokeWidth="3"/>
+							<ellipse cx="60" cy="105" rx="28" ry="30" fill="#7b61ff" stroke="#2d2638" strokeWidth="3" />
 							{/* Shirt detail */}
-							<ellipse cx="60" cy="110" rx="18" ry="20" fill="#b56cff" stroke="#2d2638" strokeWidth="2"/>
+							<ellipse cx="60" cy="110" rx="18" ry="20" fill="#b56cff" stroke="#2d2638" strokeWidth="2" />
 							{/* Left arm */}
-							<path d="M33 95 Q18 88 20 75" stroke="#7b61ff" strokeWidth="8" strokeLinecap="round" fill="none"/>
+							<path d="M33 95 Q18 88 20 75" stroke="#7b61ff" strokeWidth="8" strokeLinecap="round" fill="none" />
 							{/* Right arm waving */}
-							<path d="M87 95 Q105 82 100 68" stroke="#7b61ff" strokeWidth="8" strokeLinecap="round" fill="none"/>
+							<path d="M87 95 Q105 82 100 68" stroke="#7b61ff" strokeWidth="8" strokeLinecap="round" fill="none" />
 							{/* Hand waving */}
-							<circle cx="100" cy="65" r="7" fill="#ffd6c0" stroke="#2d2638" strokeWidth="2"/>
+							<circle cx="100" cy="65" r="7" fill="#ffd6c0" stroke="#2d2638" strokeWidth="2" />
 							{/* Head */}
-							<ellipse cx="60" cy="58" rx="26" ry="28" fill="#ffd6c0" stroke="#2d2638" strokeWidth="3"/>
+							<ellipse cx="60" cy="58" rx="26" ry="28" fill="#ffd6c0" stroke="#2d2638" strokeWidth="3" />
 							{/* Hair */}
-							<ellipse cx="60" cy="33" rx="26" ry="12" fill="#2d2638"/>
-							<ellipse cx="38" cy="42" rx="8" ry="14" fill="#2d2638"/>
-							<ellipse cx="82" cy="42" rx="8" ry="14" fill="#2d2638"/>
+							<ellipse cx="60" cy="33" rx="26" ry="12" fill="#2d2638" />
+							<ellipse cx="38" cy="42" rx="8" ry="14" fill="#2d2638" />
+							<ellipse cx="82" cy="42" rx="8" ry="14" fill="#2d2638" />
 							{/* Eyes */}
-							<ellipse cx="50" cy="56" rx="5" ry="6" fill="white" stroke="#2d2638" strokeWidth="1.5"/>
-							<ellipse cx="70" cy="56" rx="5" ry="6" fill="white" stroke="#2d2638" strokeWidth="1.5"/>
-							<circle cx="51" cy="57" r="3" fill="#2d2638"/>
-							<circle cx="71" cy="57" r="3" fill="#2d2638"/>
+							<ellipse cx="50" cy="56" rx="5" ry="6" fill="white" stroke="#2d2638" strokeWidth="1.5" />
+							<ellipse cx="70" cy="56" rx="5" ry="6" fill="white" stroke="#2d2638" strokeWidth="1.5" />
+							<circle cx="51" cy="57" r="3" fill="#2d2638" />
+							<circle cx="71" cy="57" r="3" fill="#2d2638" />
 							{/* Eye shine */}
-							<circle cx="52.5" cy="55.5" r="1" fill="white"/>
-							<circle cx="72.5" cy="55.5" r="1" fill="white"/>
+							<circle cx="52.5" cy="55.5" r="1" fill="white" />
+							<circle cx="72.5" cy="55.5" r="1" fill="white" />
 							{/* Big smile */}
-							<path d="M47 67 Q60 78 73 67" stroke="#2d2638" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+							<path d="M47 67 Q60 78 73 67" stroke="#2d2638" strokeWidth="2.5" strokeLinecap="round" fill="none" />
 							{/* Blush cheeks */}
-							<ellipse cx="43" cy="65" rx="6" ry="4" fill="#ff7ee2" opacity="0.5"/>
-							<ellipse cx="77" cy="65" rx="6" ry="4" fill="#ff7ee2" opacity="0.5"/>
+							<ellipse cx="43" cy="65" rx="6" ry="4" fill="#ff7ee2" opacity="0.5" />
+							<ellipse cx="77" cy="65" rx="6" ry="4" fill="#ff7ee2" opacity="0.5" />
 						</svg>
 					</div>
 				)}
@@ -653,7 +653,7 @@ export default function Page() {
 						<div className="size-16 bg-emerald-100 border-2 border-foreground rounded-full flex items-center justify-center mx-auto text-emerald-600 shadow-[3px_3px_0px_#000]">
 							<Check className="size-8" />
 						</div>
-						
+
 						<div className="space-y-2">
 							<span className="inline-block text-[10px] font-bold px-3 py-0.5 bg-emerald-100 text-emerald-800 border-2 border-foreground rounded-full shadow-[1.5px_1.5px_0px_#000] uppercase tracking-wider">
 								Delivered successfully!
@@ -665,7 +665,7 @@ export default function Page() {
 								Your response has been securely saved to the database. Thank you for your feedback!
 							</p>
 						</div>
-						
+
 						<div className="flex flex-col gap-2.5 pt-4">
 							<Button
 								onClick={resetToForm}
@@ -680,7 +680,7 @@ export default function Page() {
 					</div>
 				) : (
 					<div className="bg-white border-4 border-foreground rounded-3xl p-6 md:p-8 shadow-[8px_8px_0px_#000] space-y-6 relative">
-						
+
 						{/* Banner header badge */}
 						<div className="flex items-center justify-between">
 							<span className="inline-block bg-[#7b61ff] text-white border-2 border-foreground text-[9px] font-black uppercase tracking-wider rounded-full px-3 py-1 shadow-[2.5px_2.5px_0px_#000] rotate-[-2deg]">
@@ -701,30 +701,30 @@ export default function Page() {
 						</div>
 
 						{/* Dynamic Google/Gmail Switch Box (Similar to Google Forms) */}
-						<div className="bg-slate-50 border-2 border-foreground rounded-2xl p-4 shadow-[2px_2px_0px_#000] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-							<div className="space-y-0.5 min-w-0 flex-1">
+						<div className="w-full bg-slate-50 border-2 border-foreground rounded-2xl p-4 shadow-[2px_2px_0px_#000] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 min-w-0">
+							<div className="space-y-0.5 min-w-0 w-full sm:w-auto flex-1">
 								<span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block leading-none mb-1">
 									Google Account / Active Email
 								</span>
 								{user ? (
-									<div className="flex items-center gap-1.5 min-w-0">
+									<div className="flex items-center gap-1.5 min-w-0 w-full">
 										<Mail className="size-3.5 text-primary shrink-0" />
-										<span className="text-sm font-bold text-foreground truncate block font-patrick-hand leading-none mt-0.5">
+										<span className="text-sm font-bold text-foreground truncate block font-patrick-hand leading-none mt-0.5 flex-1 min-w-0">
 											{user.email}
 										</span>
 									</div>
 								) : (
-									<div className="flex items-center gap-1.5 min-w-0">
+									<div className="flex items-center gap-1.5 min-w-0 w-full">
 										<User className="size-3.5 text-slate-400 shrink-0" />
-										<span className="text-sm font-bold text-slate-500 truncate block font-patrick-hand leading-none mt-0.5">
+										<span className="text-sm font-bold text-slate-500 truncate block font-patrick-hand leading-none mt-0.5 flex-1 min-w-0">
 											Anonymous Responder
 										</span>
 									</div>
 								)}
 							</div>
-							
+
 							{user ? (
-								<Button 
+								<Button
 									onClick={handleSwitchAccount}
 									variant="outline"
 									className="h-8 border-2 border-foreground shadow-[1.5px_1.5px_0px_#000] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-[10px] font-bold bg-pastel-yellow text-[#2d2638] rounded-xl flex items-center gap-1 shrink-0"
@@ -732,7 +732,7 @@ export default function Page() {
 									<LogOut className="size-3" /> Switch Gmail / Log Out
 								</Button>
 							) : (
-								<Button 
+								<Button
 									onClick={() => { window.location.href = `/login?redirect=/form/${formId}`; }}
 									variant="outline"
 									className="h-8 border-2 border-foreground shadow-[1.5px_1.5px_0px_#000] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-[10px] font-bold bg-pastel-pink text-[#2d2638] rounded-xl flex items-center gap-1 shrink-0"
@@ -784,19 +784,19 @@ export default function Page() {
 							</div>
 
 							{/* Actions: Submit & Refresh */}
-							<div className="flex items-center gap-3 pt-4 border-t-2 border-dashed border-slate-100">
-								<Button 
-									type="submit" 
-									disabled={isPending} 
-									className="bg-[#7b61ff] hover:bg-[#684ff0] text-white font-bold h-11 px-6 rounded-xl border-2 border-foreground shadow-[3px_3px_0px_#000] hover:shadow-none hover:translate-y-0.5 hover:translate-x-0.5 transition-all text-xs flex items-center gap-1.5"
+							<div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4 border-t-2 border-dashed border-slate-100">
+								<Button
+									type="submit"
+									disabled={isPending}
+									className="w-full sm:w-auto bg-[#7b61ff] hover:bg-[#684ff0] text-white font-bold h-11 px-6 rounded-xl border-2 border-foreground shadow-[3px_3px_0px_#000] hover:shadow-none hover:translate-y-0.5 hover:translate-x-0.5 transition-all text-xs flex items-center justify-center gap-1.5"
 								>
 									{isPending ? 'Delivering...' : 'Submit Response'} <Send className="size-3.5" />
 								</Button>
-								<Button 
-									variant="outline" 
-									type="button" 
-									onClick={() => refetch?.()} 
-									className="bg-pastel-yellow hover:bg-yellow-100 text-[#2d2638] font-bold h-11 border-2 border-foreground rounded-xl text-xs shadow-[3px_3px_0px_#000] hover:shadow-none hover:translate-y-0.5 hover:translate-x-0.5 transition-all flex items-center gap-1.5"
+								<Button
+									variant="outline"
+									type="button"
+									onClick={() => refetch?.()}
+									className="w-full sm:w-auto bg-pastel-yellow hover:bg-yellow-100 text-[#2d2638] font-bold h-11 border-2 border-foreground rounded-xl text-xs shadow-[3px_3px_0px_#000] hover:shadow-none hover:translate-y-0.5 hover:translate-x-0.5 transition-all flex items-center justify-center gap-1.5"
 								>
 									Refresh Form <RefreshCw className="size-3.5" />
 								</Button>
@@ -809,7 +809,7 @@ export default function Page() {
 			{activeTermsContent && (
 				<div className="fixed inset-0 bg-black/45 backdrop-blur-sm z-50 flex items-center justify-center p-4">
 					<div className="bg-[#fbfaf5] border-4 border-foreground rounded-3xl p-6 max-w-lg w-full shadow-[8px_8px_0px_#000] relative animate-in zoom-in-95 duration-150 flex flex-col">
-						<button 
+						<button
 							type="button"
 							onClick={() => setActiveTermsContent(null)}
 							className="absolute top-4 right-4 border-2 border-foreground rounded-lg p-1 bg-white hover:bg-slate-50 transition-all shadow-[1.5px_1.5px_0px_#000] cursor-pointer"
@@ -823,7 +823,7 @@ export default function Page() {
 							{activeTermsContent}
 						</div>
 						<div className="mt-5 pt-3 border-t border-dashed border-[#2d2638]/10 flex justify-end">
-							<Button 
+							<Button
 								type="button"
 								onClick={() => setActiveTermsContent(null)}
 								className="border-2 border-foreground shadow-[2.5px_2.5px_0px_#000] hover:shadow-none hover:translate-y-0.5 hover:translate-x-0.5 transition-all text-xs font-bold bg-[#7b61ff] text-white rounded-xl h-9 px-4 cursor-pointer"
@@ -841,17 +841,17 @@ export default function Page() {
 async function uploadFile(file: File): Promise<string> {
 	const formData = new FormData();
 	formData.append('file', file);
-	
+
 	const res = await fetch('/api/upload', {
 		method: 'POST',
 		body: formData,
 	});
-	
+
 	if (!res.ok) {
 		const err = await res.json();
 		throw new Error(err.error || 'Upload failed');
 	}
-	
+
 	const data = await res.json();
 	return data.url;
 }
@@ -1223,9 +1223,8 @@ function StarRatingInput({
 					>
 						<svg
 							viewBox="0 0 24 24"
-							className={`size-8 stroke-2 stroke-[#2d2638] ${
-								isFilled ? 'fill-pastel-yellow' : 'fill-white'
-							} ${disabled ? 'opacity-70' : ''}`}
+							className={`size-8 stroke-2 stroke-[#2d2638] ${isFilled ? 'fill-pastel-yellow' : 'fill-white'
+								} ${disabled ? 'opacity-70' : ''}`}
 						>
 							<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
 						</svg>
@@ -1278,7 +1277,7 @@ function SignaturePadInput({
 
 		setIsDrawing(true);
 		ctx.beginPath();
-		
+
 		const rect = canvas.getBoundingClientRect();
 		const touch = 'touches' in e ? e.touches[0] : null;
 		const x = (touch ? touch.clientX : (e as React.MouseEvent).clientX) - rect.left;

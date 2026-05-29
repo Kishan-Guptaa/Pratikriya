@@ -188,7 +188,7 @@ export function LoginForm({
               <FieldSeparator className="text-xs *:data-[slot=field-separator-content]:bg-white py-1">
                 Or continue with
               </FieldSeparator>
-              <Field className="grid grid-cols-2 gap-3">
+              <Field className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Button 
                   variant="outline" 
                   type="button" 

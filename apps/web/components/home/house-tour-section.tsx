@@ -68,8 +68,14 @@ export function HouseTourSection() {
                       "w-full max-w-sm rounded-3xl p-4 border-2 border-foreground shadow-[4px_4px_0px_#2d2638] dark:shadow-[4px_4px_0px_#f5f3f7] transition-transform hover:-translate-y-1 hover:rotate-1 bg-white dark:bg-black"
                     )}>
                       <div className="text-center space-y-3">
-                        <div className={cn("mx-auto size-12 rounded-full bg-slate-50 dark:bg-slate-900 border-2 border-foreground flex items-center justify-center", step.color)}>
-                          {step.icon}
+                        <div className="relative inline-block mx-auto">
+                          <div className={cn("mx-auto size-12 rounded-full bg-slate-50 dark:bg-slate-900 border-2 border-foreground flex items-center justify-center", step.color)}>
+                            {step.icon}
+                          </div>
+                          {/* Mobile-visible step number badge */}
+                          <div className="absolute -top-1 -right-1 size-5 bg-primary text-white text-[10px] font-bold rounded-full border border-foreground flex items-center justify-center md:hidden shadow-sm">
+                            {idx + 1}
+                          </div>
                         </div>
                         <div>
                           <h3 className="text-xl font-bold font-geist-sans mb-1">{step.title}</h3>

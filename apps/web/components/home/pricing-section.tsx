@@ -51,7 +51,7 @@ export function PricingSection() {
           {plans.map((plan, idx) => (
             <div 
               key={idx} 
-              className={`relative bg-white dark:bg-black p-5 rounded-[2rem] border-4 ${plan.border} shadow-[4px_4px_0px_#2d2638] dark:shadow-[4px_4px_0px_#f5f3f7] ${plan.rotation} transition-transform hover:scale-105 z-10 ${plan.popular ? 'scale-105 z-20 md:-translate-y-4 shadow-[6px_6px_0px_#ff7ee2]' : ''}`}
+              className={`relative bg-white dark:bg-black p-5 rounded-[2rem] border-4 ${plan.border} shadow-[4px_4px_0px_#2d2638] dark:shadow-[4px_4px_0px_#f5f3f7] ${plan.rotation} transition-transform hover:scale-105 z-10 max-w-md mx-auto w-full ${plan.popular ? 'md:scale-105 z-20 md:-translate-y-4 shadow-[6px_6px_0px_#ff7ee2]' : ''}`}
             >
               {plan.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-accent text-white px-3 py-0.5 rounded-full font-bold font-caveat text-lg border-2 border-foreground">
