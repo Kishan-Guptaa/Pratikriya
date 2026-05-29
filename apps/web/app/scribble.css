@@ -1,0 +1,112 @@
+/* Pratikriya Base Aesthetics */
+:root {
+  --scribble-border: #2d2638;
+}
+
+html {
+  font-size: 20px; /* Scales up all Tailwind rem units (text-sm, text-lg, margins, paddings) */
+}
+
+body {
+  font-family: var(--font-patrick-hand), 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+h1, h2, h3, h4, h5, h6, .font-caveat {
+  font-family: var(--font-caveat), cursive;
+}
+
+.scribble-bg {
+  background-color: #fbfaf5;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.scribble-border {
+  border: 2px solid var(--scribble-border);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background-color: #ffffff;
+}
+
+.scribble-border-dashed {
+  border: 2px dashed var(--scribble-border);
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+}
+
+.scribble-shadow {
+  box-shadow: 4px 4px 0px rgba(45, 38, 56, 1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.scribble-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px rgba(45, 38, 56, 1);
+}
+
+.scribble-shadow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(45, 38, 56, 1);
+}
+
+.scribble-btn {
+  border: 2px solid var(--scribble-border);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 3px 3px 0px rgba(45, 38, 56, 1);
+  transition: transform 0.1s, box-shadow 0.1s;
+  font-weight: bold;
+}
+
+.scribble-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px rgba(45, 38, 56, 1);
+}
+
+.scribble-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px rgba(45, 38, 56, 1);
+}
+
+/* Notebook Binding */
+.spiral-binding {
+  position: relative;
+  border-left: 2px solid var(--scribble-border);
+}
+
+.spiral-binding::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 24px;
+  height: 100%;
+  background-image: radial-gradient(circle, #fbfaf5 4px, var(--scribble-border) 5px, transparent 6px);
+  background-size: 100% 40px;
+  background-position: center top;
+  background-repeat: repeat-y;
+  z-index: 10;
+}
+
+.spiral-binding::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 8px;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 15px, var(--scribble-border) 15px, var(--scribble-border) 19px, transparent 19px);
+  background-size: 100% 40px;
+  background-repeat: repeat-y;
+  z-index: 9;
+}
+
+/* Pastel backgrounds */
+.bg-pastel-yellow { background-color: #fff9cc; }
+.bg-pastel-blue { background-color: #e6f7ff; }
+.bg-pastel-pink { background-color: #ffe6f0; }
+.bg-pastel-green { background-color: #e6ffed; }
+.bg-pastel-purple { background-color: #f3e6ff; }
+.bg-pastel-orange { background-color: #fff0e6; }

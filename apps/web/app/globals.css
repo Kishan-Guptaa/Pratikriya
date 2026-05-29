@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./scribble.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -45,79 +46,713 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --radius: 0.95rem;
+  --background: #fbfaf5;
+  --foreground: #2d2638;
+  --card: rgba(255, 255, 255, 0.78);
+  --card-foreground: #2d2638;
+  --popover: #ffffff;
+  --popover-foreground: #2d2638;
+  --primary: #7b61ff;
+  --primary-foreground: #ffffff;
+  --secondary: #b56cff;
+  --secondary-foreground: #ffffff;
+  --muted: #f3effc;
+  --muted-foreground: #6c637a;
+  --accent: #ff7ee2;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.06);
+  --ring: #7b61ff;
+  --chart-1: #7b61ff;
+  --chart-2: #b56cff;
+  --chart-3: #ff7ee2;
+  --chart-4: #22c55e;
+  --chart-5: #3b82f6;
+  --sidebar: #fdfbf7;
+  --sidebar-foreground: #473e54;
+  --sidebar-primary: #7b61ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0eafc;
+  --sidebar-accent-foreground: #7b61ff;
+  --sidebar-border: rgba(0, 0, 0, 0.06);
+  --sidebar-ring: #7b61ff;
+  --room-overlay: rgba(251, 250, 245, 0.35);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #0f0b18;
+  --foreground: #f5f3f7;
+  --card: rgba(26, 20, 36, 0.78);
+  --card-foreground: #f5f3f7;
+  --popover: #1b1626;
+  --popover-foreground: #f5f3f7;
+  --primary: #7b61ff;
+  --primary-foreground: #ffffff;
+  --secondary: #b56cff;
+  --secondary-foreground: #ffffff;
+  --muted: #2d2442;
+  --muted-foreground: #aca2be;
+  --accent: #ff7ee2;
+  --accent-foreground: #ffffff;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #7b61ff;
+  --sidebar: #130f1d;
+  --sidebar-foreground: #aca2be;
+  --sidebar-primary: #7b61ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2d2442;
+  --sidebar-accent-foreground: #7b61ff;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #7b61ff;
+  --room-overlay: rgba(12, 8, 22, 0.65);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
+
+  /* Global heading scale using font-caveat */
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  /* Base paragraph and label typography */
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  small {
+    font-size: 0.8125rem;
+  }
+
+  /* Prevent tiny micro-text from being unreadable */
+  .text-xs {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .text-sm {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .text-base {
+    font-size: 1.15rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .text-lg {
+    font-size: 1.3rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .text-xl {
+    font-size: 1.45rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .text-2xl {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .text-3xl {
+    font-size: 2.3rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .text-4xl {
+    font-size: 2.85rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .text-5xl {
+    font-size: 3.6rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
+/* Room background wrapper classes */
+.room-living-room {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-dining-room {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-study-room {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-kids-room {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-mailbox-area {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-backyard {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-trophy-room {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-utility-room {
+  background-image: linear-gradient(var(--room-overlay), var(--room-overlay)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.room-rooftop-party {
+  background-image: linear-gradient(rgba(12, 10, 36, 0.55), rgba(12, 10, 36, 0.55)), none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.dark .glass-panel {
+  background: rgba(26, 20, 36, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(123, 97, 255, 0.3);
+  box-shadow: 0 12px 35px rgba(123, 97, 255, 0.08);
+}
+
+.dark .glass-card-hover:hover {
+  background: rgba(36, 28, 50, 0.85);
+  border-color: rgba(123, 97, 255, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.text-crayon-purple {
+  color: #7b61ff;
+}
+
+.bg-crayon-purple {
+  background-color: #7b61ff;
+}
+
+/* Dark mode semantic overrides for text-slate */
+.text-slate-800 {
+  color: #1e293b;
+}
+
+.dark .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+.text-slate-700 {
+  color: #334155;
+}
+
+.dark .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+.text-slate-600 {
+  color: #475569;
+}
+
+.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+.text-slate-500 {
+  color: #64748b;
+}
+
+.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.text-slate-400 {
+  color: #94a3b8;
+}
+
+.dark .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* Dark mode semantic overrides for backgrounds */
+.bg-white {
+  background-color: #ffffff;
+}
+
+.dark .bg-white {
+  background-color: rgba(26, 20, 36, 0.7) !important;
+  backdrop-filter: blur(16px);
+}
+
+.bg-white\/70 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dark .bg-white\/70 {
+  background-color: rgba(26, 20, 36, 0.7) !important;
+}
+
+.bg-white\/60 {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .bg-white\/60 {
+  background-color: rgba(26, 20, 36, 0.6) !important;
+}
+
+.bg-white\/50 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dark .bg-white\/50 {
+  background-color: rgba(26, 20, 36, 0.5) !important;
+}
+
+.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .bg-white\/80 {
+  background-color: rgba(26, 20, 36, 0.8) !important;
+}
+
+.bg-slate-50\/50 {
+  background-color: rgba(248, 250, 252, 0.5);
+}
+
+.dark .bg-slate-50\/50 {
+  background-color: rgba(20, 16, 28, 0.5) !important;
+}
+
+.bg-slate-50 {
+  background-color: #f8fafc;
+}
+
+.dark .bg-slate-50 {
+  background-color: #130f1d !important;
+}
+
+.hover\:bg-slate-50:hover {
+  background-color: #f8fafc;
+}
+
+.dark .hover\:bg-slate-50:hover {
+  background-color: rgba(123, 97, 255, 0.1) !important;
+}
+
+/* Dark mode semantic overrides for borders */
+.border-slate-200 {
+  border-color: #e2e8f0;
+}
+
+.dark .border-slate-200 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.border-slate-100 {
+  border-color: #f1f5f9;
+}
+
+.dark .border-slate-100 {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.border-black\/5 {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .border-black\/5 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.border-black\/8 {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.dark .border-black\/8 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Custom styled inputs in dark mode */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark textarea {
+  background-color: rgba(20, 16, 28, 0.8) !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Table cells dark mode borders */
+.dark td,
+.dark th {
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Fix active main-sidebar buttons styling in dark mode */
+.dark .bg-\[\#f0eafc\] {
+  background-color: rgba(123, 97, 255, 0.15) !important;
+  color: #ff7ee2 !important;
+}
+
+.dark .text-\[\#7b61ff\] {
+  color: #ff7ee2 !important;
+}
+
+.dark .border-\[\#7b61ff\] {
+  border-color: #ff7ee2 !important;
+}
+
+/* Dashboard typography overrides: scaled down to look compact, clean, and elegant */
+.dashboard-root {
+  font-size: 0.9rem;
+}
+.dashboard-root .text-xs { font-size: 0.75rem !important; line-height: 1.4 !important; }
+.dashboard-root .text-sm { font-size: 0.85rem !important; line-height: 1.5 !important; }
+.dashboard-root .text-base { font-size: 0.95rem !important; line-height: 1.5 !important; }
+.dashboard-root .text-lg { font-size: 1.1rem !important; line-height: 1.45 !important; }
+.dashboard-root .text-xl { font-size: 1.2rem !important; line-height: 1.4 !important; }
+.dashboard-root .text-2xl { font-size: 1.4rem !important; line-height: 1.3 !important; }
+.dashboard-root .text-3xl { font-size: 1.75rem !important; line-height: 1.2 !important; }
+.dashboard-root .text-4xl { font-size: 2.25rem !important; line-height: 1.15 !important; }
+.dashboard-root .text-5xl { font-size: 2.8rem !important; line-height: 1.1 !important; }
+
+@media (min-width: 768px) {
+  .dashboard-root .md\:text-xs { font-size: 0.75rem !important; }
+  .dashboard-root .md\:text-sm { font-size: 0.85rem !important; }
+  .dashboard-root .md\:text-base { font-size: 0.95rem !important; }
+  .dashboard-root .md\:text-lg { font-size: 1.1rem !important; }
+  .dashboard-root .md\:text-xl { font-size: 1.2rem !important; }
+  .dashboard-root .md\:text-2xl { font-size: 1.4rem !important; }
+  .dashboard-root .md\:text-3xl { font-size: 1.75rem !important; }
+  .dashboard-root .md\:text-4xl { font-size: 2.25rem !important; }
+  .dashboard-root .md\:text-5xl { font-size: 2.8rem !important; }
+}
+
+.dashboard-root p { font-size: 0.88rem !important; line-height: 1.55 !important; }
+.dashboard-root label { font-size: 0.8rem !important; font-weight: 600 !important; }
+.dashboard-root small { font-size: 0.75rem !important; }
+
+/* Set a smaller base font size for navbar, pricing, features, and timeline sections */
+header,
+#pricing,
+#features,
+#timeline-section {
+  font-size: 0.8rem;
+}
+
+/* Set an even smaller base font size for the footer */
+footer {
+  font-size: 0.8rem !important;
+}
+
+/* Restore smaller-than-default font sizes in these sections */
+header .text-xs,
+#pricing .text-xs,
+#features .text-xs,
+#timeline-section .text-xs {
+  font-size: 0.65rem !important;
+  line-height: 0.9rem !important;
+}
+
+header .text-sm,
+#pricing .text-sm,
+#features .text-sm,
+#timeline-section .text-sm {
+  font-size: 0.75rem !important;
+  line-height: 1.1rem !important;
+}
+
+header .text-base,
+#pricing .text-base,
+#features .text-base,
+#timeline-section .text-base {
+  font-size: 0.85rem !important;
+  line-height: 1.25rem !important;
+}
+
+header .text-lg,
+#pricing .text-lg,
+#features .text-lg,
+#timeline-section .text-lg {
+  font-size: 0.95rem !important;
+  line-height: 1.45rem !important;
+}
+
+header .text-xl,
+#pricing .text-xl,
+#features .text-xl,
+#timeline-section .text-xl {
+  font-size: 1.05rem !important;
+  line-height: 1.5rem !important;
+}
+
+header .text-2xl,
+#pricing .text-2xl,
+#features .text-2xl,
+#timeline-section .text-2xl {
+  font-size: 1.2rem !important;
+  line-height: 1.65rem !important;
+}
+
+header .text-3xl,
+#pricing .text-3xl,
+#features .text-3xl,
+#timeline-section .text-3xl {
+  font-size: 1.4rem !important;
+  line-height: 1.85rem !important;
+}
+
+header .text-4xl,
+#pricing .text-4xl,
+#features .text-4xl,
+#timeline-section .text-4xl {
+  font-size: 1.75rem !important;
+  line-height: 2.05rem !important;
+}
+
+header .text-5xl,
+#pricing .text-5xl,
+#features .text-5xl,
+#timeline-section .text-5xl {
+  font-size: 2.2rem !important;
+  line-height: 1 !important;
+}
+
+/* Responsive utility class overrides inside compact sections */
+@media (min-width: 768px) {
+  header .md\:text-sm, #pricing .md\:text-sm, #features .md\:text-sm, #timeline-section .md\:text-sm { font-size: 0.75rem !important; line-height: 1.1rem !important; }
+  header .md\:text-base, #pricing .md\:text-base, #features .md\:text-base, #timeline-section .md\:text-base { font-size: 0.85rem !important; line-height: 1.25rem !important; }
+  header .md\:text-lg, #pricing .md\:text-lg, #features .md\:text-lg, #timeline-section .md\:text-lg { font-size: 0.95rem !important; line-height: 1.45rem !important; }
+  header .md\:text-xl, #pricing .md\:text-xl, #features .md\:text-xl, #timeline-section .md\:text-xl { font-size: 1.05rem !important; line-height: 1.5rem !important; }
+  header .md\:text-2xl, #pricing .md\:text-2xl, #features .md\:text-2xl, #timeline-section .md\:text-2xl { font-size: 1.2rem !important; line-height: 1.65rem !important; }
+  header .md\:text-3xl, #pricing .md\:text-3xl, #features .md\:text-3xl, #timeline-section .md\:text-3xl { font-size: 1.4rem !important; line-height: 1.85rem !important; }
+  header .md\:text-4xl, #pricing .md\:text-4xl, #features .md\:text-4xl, #timeline-section .md\:text-4xl { font-size: 1.75rem !important; line-height: 2.05rem !important; }
+  header .md\:text-5xl, #pricing .md\:text-5xl, #features .md\:text-5xl, #timeline-section .md\:text-5xl { font-size: 2.2rem !important; line-height: 1 !important; }
+}
+
+/* Reset standard element selectors inside header, pricing, features, and timeline-section */
+header p,
+#pricing p,
+#features p,
+#timeline-section p {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+header label,
+#pricing label,
+#features label,
+#timeline-section label {
+  font-size: 0.75rem;
+  font-weight: inherit;
+}
+
+header small,
+#pricing small,
+#features small,
+#timeline-section small {
+  font-size: 0.7rem;
+}
+
+/* Custom smaller overrides specifically for the footer text sizes */
+footer .text-xs {
+  font-size: 0.65rem !important;
+  line-height: 0.9rem !important;
+}
+
+footer .text-sm {
+  font-size: 0.725rem !important;
+  line-height: 1.1rem !important;
+}
+
+footer .text-base {
+  font-size: 0.8rem !important;
+  line-height: 1.25rem !important;
+}
+
+footer .text-lg {
+  font-size: 0.9rem !important;
+  line-height: 1.4rem !important;
+}
+
+footer .text-xl {
+  font-size: 1.0rem !important;
+  line-height: 1.5rem !important;
+}
+
+footer .text-2xl {
+  font-size: 1.2rem !important;
+  line-height: 1.65rem !important;
+}
+
+footer .text-3xl {
+  font-size: 1.5rem !important;
+  line-height: 1.85rem !important;
+}
+
+footer .text-4xl {
+  font-size: 1.8rem !important;
+  line-height: 2.05rem !important;
+}
+
+footer .text-5xl {
+  font-size: 2.4rem !important;
+  line-height: 1 !important;
+}
+
+/* Reset standard element selectors inside footer */
+footer p {
+  font-size: 0.8rem !important;
+  line-height: 1.45 !important;
+}
+
+footer label {
+  font-size: 0.75rem !important;
+  font-weight: inherit;
+}
+
+footer small {
+  font-size: 0.7rem !important;
+}
+
+footer h4 {
+  font-size: 1.35rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Hide scrollbar utility class */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Item and spacing scaling adjustments for compact sections */
+#features .p-5,
+#pricing .p-5 {
+  padding: 0.875rem !important;
+}
+
+#features .gap-6 {
+  gap: 0.875rem !important;
+}
+
+@media (min-width: 768px) {
+  #features .md\:gap-8 {
+    gap: 1.125rem !important;
+  }
+}
+
+#timeline-section .p-4 {
+  padding: 0.75rem !important;
+}
+
+#timeline-section .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem !important;
+}
+
+#timeline-section {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Scale down pricing section specific elements */
+#pricing .h-10 {
+  height: 2.25rem !important;
 }
