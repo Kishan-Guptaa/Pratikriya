@@ -625,8 +625,8 @@ function DashboardContent() {
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="p-0">
-                  <Table className="w-full">
+                <CardContent className="p-0 overflow-x-auto w-full">
+                  <Table className="w-full min-w-[650px]">
                     <TableHeader className="bg-slate-50/50">
                       <TableRow className="border-b border-slate-100 hover:bg-transparent">
                         <TableHead className="font-bold text-slate-700 text-sm px-5 py-4 font-patrick-hand">Form Title</TableHead>
@@ -908,8 +908,8 @@ function DashboardContent() {
               </div>
 
               {/* Playground Forms Grid */}
-              <div className="mt-6 rounded-2xl border border-slate-100 overflow-hidden">
-                <Table className="w-full bg-white/40">
+              <div className="mt-6 rounded-2xl border border-slate-100 overflow-hidden overflow-x-auto w-full bg-white/40">
+                <Table className="w-full min-w-[850px]">
                   <TableHeader className="bg-slate-50/50">
                     <TableRow className="border-b border-slate-100">
                       <TableHead className="font-bold text-slate-700 text-xs px-5 py-4">Title & Details</TableHead>
